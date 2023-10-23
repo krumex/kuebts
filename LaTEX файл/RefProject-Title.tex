@@ -1,0 +1,103 @@
+\documentclass[a4paper,14pt]{extarticle}
+
+% Подключение пакетов
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amssymb,amsfonts,amsmath,cite,enumerate,float,indentfirst}
+\usepackage{graphicx}
+\graphicspath{{images/}} 
+\usepackage{cmap}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{indentfirst}
+\usepackage{enumitem}
+\usepackage{amssymb,amsmath}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{listings}
+
+% Настройка полей
+\geometry{left=2cm}% левое поле
+\geometry{right=1.5cm}% правое поле
+\geometry{top=1cm}% верхнее поле
+\geometry{bottom=2cm}% нижнее поле
+
+% Настройка интервала между строками
+\onehalfspacing
+
+% Настройка заголовков разделов и подразделов
+\titleformat{\section}{\normalfont\fontsize{16}{15}\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\fontsize{14}{13}\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\fontsize{14}{13}\bfseries}{\thesubsubsection}{1em}{}
+
+% Настройка оглавления
+\titlecontents{section}[0pt]{\vspace{6pt}\bfseries\normalsize}{\thecontentslabel.\ }{}{\titlerule*[1pc]{.}\contentspage}
+\titlecontents{subsection}[1em]{\vspace{6pt}\normalsize}{\thecontentslabel.\ }{}{\titlerule*[1pc]{.}\contentspage}
+
+% Настройка маркированных списков
+\setlist[enumerate]{label*=\arabic*.}
+
+%Команда для вставки изображений
+\newcommand{\imgh}[3]
+{
+	\begin{figure}[h]
+		\center{\includegraphics[width=#1]{#2}}
+		\caption{#3}
+		\label{ris:#2}
+	\end{figure}
+}
+
+%Дополнительные команды
+\renewcommand{\theenumi}{\arabic{enumi}}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\labelenumi}{\arabic{enumi}}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\theenumii}{.\arabic{enumii}}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\theenumiii}{.\arabic{enumiii}}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}% Меняем везде перечисления на цифра.цифра
+
+\begin{document}
+	\begin{titlepage}
+	\newpage
+	
+	\begin{center}
+		НАЗВАНИЕ УЧЕБНОГО ЗАВЕДЕНИЯ \\
+	\end{center}
+	
+	\vspace{8em}
+	
+	\begin{center}
+		\Large Название кафедры \\ 
+	\end{center}
+	
+	\vspace{2em}
+	
+	\begin{center}
+		\textsc{\textbf{Название темы работы \linebreak длинное очень, набранное в \LaTeX{}}}
+	\end{center}
+	
+	\vspace{6em}
+	
+	
+	
+	\newbox{\lbox}
+	\savebox{\lbox}{\hbox{Пупкин Иван Иванович}}
+	\newlength{\maxl}
+	\setlength{\maxl}{\wd\lbox}
+	\hfill\parbox{11cm}{
+		\hspace*{5cm}\hspace*{-5cm}Студент:\hfill\hbox to\maxl{Тест Пользователь\hfill}\\
+		\hspace*{5cm}\hspace*{-5cm}Преподаватель:\hfill\hbox to\maxl{Пупкин Иван Иванович}\\
+		\\
+		\hspace*{5cm}\hspace*{-5cm}Группа:\hfill\hbox to\maxl{NNN}\\
+	}
+	
+	
+	\vspace{\fill}
+	
+	\begin{center}
+		Москва, 2023 г.
+	\end{center}
+	\end{titlepage}
+\end{document}
